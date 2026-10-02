@@ -17,3 +17,6 @@ Wiki проекта: https://github.com/ekaterinashavel2005-web/project/wiki
 - `data/` — вспомогательные данные
 - `LICENSE` — лицензия проекта (MIT)
 - `.gitignore` — список игнорируемых файлов
+
+## Планы на будущее
+Добавить поддержку экспорта карточек в PDF.
