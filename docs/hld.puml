@@ -1,0 +1,32 @@
+@startuml
+title CardGen — HLD (component diagram)
+
+actor "Студент" as Student
+actor "Автор проекта\n(администратор)" as Admin
+
+rectangle "CardGen (CLI-приложение)" {
+  component "CLI\n(аргументы, ввод-вывод)" as CLI
+  component "Загрузчик файлов" as Loader
+  component "Парсер Markdown" as Parser
+  component "Генератор карточек" as Gen
+  component "Сессия повторения\n(случайный порядок, знаю/не знаю)" as Review
+  component "Экспорт (JSON)" as Export
+}
+
+folder "Файловая система\n(content/, data/)" as FS
+cloud "GitHub\n(репозиторий, Issues, Wiki)" as GH
+cloud "Внешние сервисы\n(Anki, Quizlet — планируется)" as Ext
+
+Student --> CLI : запускает команды
+Student --> GH : сообщает об ошибках
+Admin --> GH : ведёт бэклог, принимает PR
+CLI --> Loader : путь к файлу
+Loader --> FS : читает .md
+Loader --> Parser : текст конспекта
+Parser --> Gen : пары «вопрос/ответ»
+Gen --> Review : набор карточек
+Gen --> Export : набор карточек
+Review --> CLI : карточки, итог сессии
+Export --> FS : пишет .json
+Export ..> Ext : импорт (Release-1+)
+@enduml
