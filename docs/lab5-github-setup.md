@@ -9,7 +9,7 @@
 | M2. Генерация и повторение | 2026-12-14 | 3 |
 | M3. Экспорт и релиз 1 | 2026-12-28 | 4 |
 
-Issues #16 («Веб-интерфейс») и #17 («Импорт в Anki») — Later, без майлстоуна.
+Issues #16 («Веб-интерфейс») и #17 («Импорт в Anki») — Later, привязаны к майлстоуну «Later: вне плана релиза 1» (без due date, вне оценки M1–M3).
 
 ## 2. Issues: Estimate, Priority, Iteration, Start/Target date
 | Issue | Milestone | Estimate | Priority | Iteration | Start | Target |
